@@ -8,11 +8,12 @@ clickHome() {
   }
 //About    
 clickAbout() {
-    cy.get('a[aria-label="About Us"]').click(); // Replace with the correct selector for the About Us link
+    cy.get('a[aria-label="About Us"]').click();
   }
 //Contact
   clickContact() {
-    cy.get('a[aria-label="Contact Us"]').click(); // Replace with the correct selector for the Contact Us link
+    cy.visit('[aria-label="Contact Us"]').click({force: true});
+      cy.url('include',"helpcentre?otracker")
   }
     }
     
