@@ -4,16 +4,17 @@ class NavbarPage {
     }
 //Home
 clickHome() {
-    cy.get('img[title="Flipkart"][src*="fkheaderlogo"]',{ timeout: 10000 }).click();
+    cy.get('img[title="Flipkart"][src*="fkheaderlogo"]').click();
   }
-//About    
+//About
 clickAbout() {
-    cy.get('a[aria-label="About Us"]').click();
+    cy.get('[aria-label="About Us"]').click();
+    cy.url({timeout: 10000}).should('include','');
   }
 //Contact
   clickContact() {
     cy.visit('[aria-label="Contact Us"]').click({force: true});
-      cy.url('include',"helpcentre?otracker")
+      cy.url({timeout: 10000}).should('include','helpcentre?otracker');
   }
     }
     
